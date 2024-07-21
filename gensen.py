@@ -65,7 +65,7 @@ class MarketConditionsEvaluator:
 
                             difference_check: float = round(
                                 float(asset_available_value_brl) -
-                                float(asset["base_balance"]), 3
+                                float(asset["base_balance"]), 4
                             )
 
                             log.info(f"{difference_check}: {cryptocurrency} -> {user}")
@@ -84,7 +84,7 @@ class MarketConditionsEvaluator:
                                         "market_symbol": f"{cryptocurrency}brl",
                                         "side": "SELL",
                                         "type": "INSTANT",
-                                        "amount": str(float(asset["fixed_profit_brl"]))
+                                        "amount": str(difference_check)
                                     }
 
                                     order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)

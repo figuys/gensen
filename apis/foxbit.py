@@ -83,7 +83,7 @@ class Foxbit:
             self, brl_asset: float = None, available_balance_brl: float = None
         ) -> float:
         _available_balance_brl = float(available_balance_brl) * float(brl_asset)
-        return round(_available_balance_brl, 3)
+        return round(_available_balance_brl, 5)
 
 
 if __name__ == "__main__":
