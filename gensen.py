@@ -106,7 +106,7 @@ class MarketConditionsEvaluator:
                                 connection.child(f"users/{user}/messages/gensen/{name_timestamp}").set(
                                     {
                                         "title": f'Short-term profit of {cryptocurrency.upper()} (+**{difference_check}**)!',
-                                        "description": f"At that very moment I made a **sale** of R$**{difference_check}** worth of {asset['name']}!!"
+                                        "description": f"At this very moment I made a **sale** of R$**{difference_check}** worth of {asset['name']}!!"
                                     }
                                 )
 
