@@ -1,13 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import datetime
 import pytz
 import asyncio
 from pathlib import Path
 
-from infra import log
-from infra.settings import ENVIRONMENT
-from apis import Firebase
-from apis import Foxbit
-from utils.encryptor import Encryptor
+from infra import log, ENVIRONMENT
+from apis import Firebase, Foxbit
+from utils import Encryptor
 
 
 class MarketConditionsEvaluator:
@@ -114,8 +114,12 @@ class MarketConditionsEvaluator:
 async def main():
     evaluator = MarketConditionsEvaluator()
     while True:
-        await evaluator.evaluate_market_conditions()
-        await asyncio.sleep(30)
+        try:
+            await evaluator.evaluate_market_conditions()
+            await asyncio.sleep(30)
+        except Exception as error:
+            log.critical(error)
+            await asyncio.sleep(180)
 
 
 if __name__ == "__main__":
