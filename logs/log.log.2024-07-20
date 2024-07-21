@@ -1,0 +1,60 @@
+2024-07-20 23:36:39,864 - [logger.py:69] - INFO - [background_tasks] market_conditions_evaluator: 2024-07-20 23:36:39
+2024-07-20 23:36:42,344 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:42,345 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:42,345 - [logger.py:69] - INFO - PreHash: 1721529402345GET/rest/v3/accounts
+2024-07-20 23:36:42,345 - [logger.py:69] - INFO - Signature: 1721529402345GET/rest/v3/accounts
+2024-07-20 23:36:43,904 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:43,904 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:43,904 - [logger.py:69] - INFO - PreHash: 1721529403904GET/rest/v3/markets/quotesside=buy&base_currency=bonk&quote_currency=brl&amount=1
+2024-07-20 23:36:43,904 - [logger.py:69] - INFO - Signature: 1721529403904GET/rest/v3/markets/quotesside=buy&base_currency=bonk&quote_currency=brl&amount=1
+2024-07-20 23:36:44,380 - [logger.py:69] - INFO - 0.531: bonk -> 1011675274112401500
+2024-07-20 23:36:45,411 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:45,412 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:45,412 - [logger.py:69] - INFO - PreHash: 1721529405412GET/rest/v3/accounts
+2024-07-20 23:36:45,412 - [logger.py:69] - INFO - Signature: 1721529405412GET/rest/v3/accounts
+2024-07-20 23:36:47,084 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:47,084 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:47,084 - [logger.py:69] - INFO - PreHash: 1721529407084GET/rest/v3/markets/quotesside=buy&base_currency=btc&quote_currency=brl&amount=1
+2024-07-20 23:36:47,084 - [logger.py:69] - INFO - Signature: 1721529407084GET/rest/v3/markets/quotesside=buy&base_currency=btc&quote_currency=brl&amount=1
+2024-07-20 23:36:47,453 - [logger.py:69] - INFO - 1.353: btc -> 1011675274112401500
+2024-07-20 23:36:48,487 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:48,487 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:48,488 - [logger.py:69] - INFO - PreHash: 1721529408487GET/rest/v3/accounts
+2024-07-20 23:36:48,488 - [logger.py:69] - INFO - Signature: 1721529408487GET/rest/v3/accounts
+2024-07-20 23:36:50,073 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:50,073 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:50,073 - [logger.py:69] - INFO - PreHash: 1721529410073GET/rest/v3/markets/quotesside=buy&base_currency=eth&quote_currency=brl&amount=1
+2024-07-20 23:36:50,074 - [logger.py:69] - INFO - Signature: 1721529410073GET/rest/v3/markets/quotesside=buy&base_currency=eth&quote_currency=brl&amount=1
+2024-07-20 23:36:50,343 - [logger.py:69] - INFO - 0.889: eth -> 1011675274112401500
+2024-07-20 23:36:51,377 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:51,377 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:51,377 - [logger.py:69] - INFO - PreHash: 1721529411377GET/rest/v3/accounts
+2024-07-20 23:36:51,377 - [logger.py:69] - INFO - Signature: 1721529411377GET/rest/v3/accounts
+2024-07-20 23:36:52,945 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:52,945 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:52,946 - [logger.py:69] - INFO - PreHash: 1721529412946GET/rest/v3/markets/quotesside=buy&base_currency=matic&quote_currency=brl&amount=1
+2024-07-20 23:36:52,946 - [logger.py:69] - INFO - Signature: 1721529412946GET/rest/v3/markets/quotesside=buy&base_currency=matic&quote_currency=brl&amount=1
+2024-07-20 23:36:53,296 - [logger.py:69] - INFO - 6.652: matic -> 1011675274112401500
+2024-07-20 23:36:53,989 - [logger.py:69] - INFO - [INSTANT ORDER NOTIFICATION] matic -> 1011675274112401500
+2024-07-20 23:36:55,254 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:55,255 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:55,255 - [logger.py:69] - INFO - PreHash: 1721529415255GET/rest/v3/accounts
+2024-07-20 23:36:55,255 - [logger.py:69] - INFO - Signature: 1721529415255GET/rest/v3/accounts
+2024-07-20 23:36:56,861 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:56,861 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:56,861 - [logger.py:69] - INFO - PreHash: 1721529416861GET/rest/v3/markets/quotesside=buy&base_currency=near&quote_currency=brl&amount=1
+2024-07-20 23:36:56,861 - [logger.py:69] - INFO - Signature: 1721529416861GET/rest/v3/markets/quotesside=buy&base_currency=near&quote_currency=brl&amount=1
+2024-07-20 23:36:57,384 - [logger.py:69] - INFO - -4.103: near -> 1011675274112401500
+2024-07-20 23:36:58,429 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:58,429 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:36:58,429 - [logger.py:69] - INFO - PreHash: 1721529418429GET/rest/v3/accounts
+2024-07-20 23:36:58,429 - [logger.py:69] - INFO - Signature: 1721529418429GET/rest/v3/accounts
+2024-07-20 23:36:59,743 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:36:59,743 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/markets/quotes
+2024-07-20 23:36:59,743 - [logger.py:69] - INFO - PreHash: 1721529419743GET/rest/v3/markets/quotesside=buy&base_currency=sol&quote_currency=brl&amount=1
+2024-07-20 23:36:59,744 - [logger.py:69] - INFO - Signature: 1721529419743GET/rest/v3/markets/quotesside=buy&base_currency=sol&quote_currency=brl&amount=1
+2024-07-20 23:37:00,006 - [logger.py:69] - INFO - 0.198: sol -> 1011675274112401500
+2024-07-20 23:37:01,037 - [logger.py:69] - INFO - --------------------------------------------------
+2024-07-20 23:37:01,037 - [logger.py:69] - INFO - Requesting: (GET) /rest/v3/accounts
+2024-07-20 23:37:01,037 - [logger.py:69] - INFO - PreHash: 1721529421037GET/rest/v3/accounts
+2024-07-20 23:37:01,037 - [logger.py:69] - INFO - Signature: 1721529421037GET/rest/v3/accounts
