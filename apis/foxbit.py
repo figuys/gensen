@@ -87,6 +87,8 @@ class Foxbit:
 
 
 if __name__ == "__main__":
+    # from pprint import pprint
+
 
     foxbit = Foxbit(
         api_key=os.getenv("FOXBIT_ACCESS_KEY"),
@@ -97,6 +99,38 @@ if __name__ == "__main__":
 
     # Get user info
     # meResponse = foxbit.request("GET", "/rest/v3/me", None, None)
+    # print("Response:")
+    # pprint(meResponse)
+
+
+
+    # Get user history
+
+    # market_symbol: str = "btcbrl"
+
+    # meResponse = foxbit.request(
+    #     "GET",
+    #     f"/rest/v3/markets/{market_symbol}/trades/history",
+    #     None, None
+    # )
+    # print("Response:")
+    # # pprint(meResponse)
+    # pprint(meResponse["data"][0])
+
+    # print("Valor da venda em R$:",
+    #     foxbit.convert_asset_to_brl(
+    #         brl_asset=meResponse["data"][0]["volume"],
+    #         available_balance_brl=meResponse["data"][0]["price"]
+    #     )
+    # )
+
+    # https://api.foxbit.com.br/rest/v3/markets/ticker/24hr
+
+    # meResponse = foxbit.request(
+    #     "GET",
+    #     f"/rest/v3/markets/ticker/24hr",
+    #     None, None
+    # )
     # print("Response:")
     # pprint(meResponse)
 
