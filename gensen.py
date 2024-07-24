@@ -35,7 +35,7 @@ class MarketConditionsEvaluator:
                 continue
 
             for exchange in users[user]["exchanges"].keys():
-                if not "cryptocurrency" in users[user]["exchanges"][exchange].keys():
+                if not "cryptocurrencies" in users[user]["exchanges"][exchange].keys():
                     continue
 
                 for cryptocurrency in users[user]["exchanges"][exchange]["cryptocurrencies"].keys():
