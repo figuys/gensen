@@ -8,8 +8,10 @@ import os
 load_dotenv()
 
 
-ENVIRONMENT: Any = os.getenv("ENVIRONMENT", "")
+ENVIRONMENT: str = os.getenv("ENVIRONMENT", "")
 
 ENCRYPTATION_KEY: Any = os.getenv("ENCRYPTATION_KEY", "")
 
-FIREBASE_API_KEY = os.getenv("FIREBASE_API_KEY", "")
+FIREBASE_URL: str = os.getenv("FIREBASE_URL", "")
+
+FIREBASE_API_KEY: Any = os.getenv("FIREBASE_API_KEY", "")

@@ -5,7 +5,7 @@ import os
 import json
 import firebase_admin
 from firebase_admin import credentials, db, initialize_app
-from infra import log, FIREBASE_API_KEY
+from infra import log, FIREBASE_URL, FIREBASE_API_KEY
 
 
 class Firebase:
@@ -14,7 +14,7 @@ class Firebase:
     def firebase_launcher(_credentials: credentials.Certificate) -> bool:
             if not firebase_admin._apps:
                 initialize_app(
-                    _credentials, {"databaseURL": "https://uuidgensen-default-rtdb.firebaseio.com/"}
+                    _credentials, {"databaseURL": FIREBASE_API_KEY}
                 )
 
     def __init__(self) -> None:
