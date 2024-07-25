@@ -14,7 +14,7 @@ class Firebase:
     def firebase_launcher(_credentials: credentials.Certificate) -> bool:
             if not firebase_admin._apps:
                 initialize_app(
-                    _credentials, {"databaseURL": FIREBASE_API_KEY}
+                    _credentials, {"databaseURL": FIREBASE_URL}
                 )
 
     def __init__(self) -> None:
