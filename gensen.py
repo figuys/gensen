@@ -117,8 +117,12 @@ class MarketConditionsEvaluator:
 async def main():
     evaluator = MarketConditionsEvaluator()
     while True:
-        await evaluator.evaluate_market_conditions()
-        await asyncio.sleep(30)
+        try:
+            await evaluator.evaluate_market_conditions()
+            await asyncio.sleep(30)
+        except Exception as error:
+            log.error(f"[UNEXPECTED ERROR] {error}")
+            await asyncio.sleep(300)
 
 
 if __name__ == "__main__":
