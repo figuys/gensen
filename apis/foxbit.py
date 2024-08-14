@@ -88,14 +88,13 @@ class Foxbit:
 
 if __name__ == "__main__":
     # from pprint import pprint
-
-
-    foxbit = Foxbit(
-        api_key=os.getenv("FOXBIT_ACCESS_KEY"),
-        api_secret=os.getenv("FOXBIT_SECRET_KEY")
-    )
-
-    print("FOXBIT_USER_ID", os.getenv("FOXBIT_USER_ID"))
+    #
+    # foxbit = Foxbit(
+    #     api_key=os.getenv("FOXBIT_ACCESS_KEY"),
+    #     api_secret=os.getenv("FOXBIT_SECRET_KEY")
+    # )
+    #
+    # print("FOXBIT_USER_ID", os.getenv("FOXBIT_USER_ID"))
 
     # Get user info
     # meResponse = foxbit.request("GET", "/rest/v3/me", None, None)
@@ -105,16 +104,21 @@ if __name__ == "__main__":
 
 
     # Get user history
-
+    #
     # market_symbol: str = "btcbrl"
-
+    #
+    # payload: dict = {
+    #     "page_size": 200
+    # }
+    #
     # meResponse = foxbit.request(
     #     "GET",
     #     f"/rest/v3/markets/{market_symbol}/trades/history",
-    #     None, None
+    #     payload, None
     # )
     # print("Response:")
-    # # pprint(meResponse)
+    # pprint(meResponse)
+
     # pprint(meResponse["data"][0])
 
     # print("Valor da venda em R$:",
@@ -204,3 +208,4 @@ if __name__ == "__main__":
 
     # orderResponse = foxbit.request('POST', '/rest/v3/orders', None, order)
     # print('Response:', orderResponse)
+    ...
