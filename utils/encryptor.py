@@ -57,7 +57,7 @@ class Encryptor:
 
 if __name__ == "__main__":
     raw_text = "UUDT7DJgG8D"
-
+    
     print("Raw:", raw_text)
 
     encrypted_api_key = Encryptor().encrypt_api_key(raw_text)
