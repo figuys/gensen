@@ -7,7 +7,7 @@ import hmac
 import hashlib
 from urllib.parse import urlencode
 
-from infra import log
+from app.infra import log
 
 
 class Foxbit:
