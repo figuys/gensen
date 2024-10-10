@@ -4,7 +4,7 @@ from typing import Union
 import json
 import firebase_admin
 from firebase_admin import credentials, db, initialize_app
-from app.infra import log, FIREBASE_URL, FIREBASE_API_KEY
+from infra import log, FIREBASE_URL, FIREBASE_API_KEY
 
 
 class Firebase:

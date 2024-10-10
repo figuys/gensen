@@ -5,7 +5,7 @@ from requests.models import Response
 import pandas as pd
 import os
 
-from app.infra import log, COINGECKO_API_KEY
+from infra import log, COINGECKO_API_KEY
 
 
 class Coingecko:

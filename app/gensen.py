@@ -7,7 +7,7 @@ from pathlib import Path
 
 from infra import log, ENVIRONMENT, COINGECKO_API_KEY
 from apis import Firebase, Foxbit, Coingecko
-from .predictions import PriceIndicator
+from predictions import PriceIndicator
 from utils import Encryptor
 
 
