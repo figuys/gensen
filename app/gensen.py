@@ -92,7 +92,7 @@ class MarketConditionsEvaluator:
 
                                 if ENVIRONMENT == "SERVER":
                                     order = {
-                                        "market_symbol": f"{cryptocurrency}brl",
+                                        "market_symbol": f"brl{cryptocurrency}",
                                         "side": "SELL",
                                         "type": "INSTANT",
                                         "amount": str(asset_available_value_brl)
@@ -100,6 +100,7 @@ class MarketConditionsEvaluator:
 
                                     order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
 
+                                    log.info(f"[{timestamp}] SELL ORDER: {order}")
                                     log.info(f"[{timestamp}] ORDER RESPONSE: {order_response}")
 
                                     await asyncio.sleep(1)
@@ -143,9 +144,10 @@ class MarketConditionsEvaluator:
                                             "type": "INSTANT",
                                             "amount": str(asset["base_balance"])
                                         }
-
+                                        
                                         order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
 
+                                        log.info(f"[{timestamp}] BUY ORDER: {order}")
                                         log.info(f"[{timestamp}] ORDER RESPONSE: {order_response}")
 
                                         await asyncio.sleep(1)
