@@ -161,4 +161,4 @@ cython_debug/
 app/infra/uuidgensen-firebase-adminsdk-odnzh-1be5bd0dcb.json
 /myenv
 /.idea
-/logs
+app/logs
