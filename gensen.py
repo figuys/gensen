@@ -5,16 +5,14 @@ import pytz
 import asyncio
 from pathlib import Path
 
-from infra import log, ENVIRONMENT, COINGECKO_API_KEY
-from apis import Firebase, Foxbit, Coingecko
-from .predictions import PriceIndicator
+from infra import log, ENVIRONMENT
+from apis import Firebase, Foxbit
 from utils import Encryptor
 
 
 class MarketConditionsEvaluator:
     def __init__(self):
         self.current_dir = Path(__file__).resolve().parent
-        self.beta_feature_cryptos: list = ["bitcoin", "ethereum", "solana"]
 
     async def evaluate_market_conditions(self):
         log.info(f"[background_tasks] market_conditions_evaluator: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -72,19 +70,13 @@ class MarketConditionsEvaluator:
                                 float(asset_available_value_brl) -
                                 float(asset["base_balance"]), 4
                             )
-                            
-                            percentage_of_profit: float = (
-                                (difference_check * 100) / float(asset["base_balance"])
-                            )
-
-                            log.info(f"Percentage of profit: {percentage_of_profit:.1f}%")
 
                             log.info(f"{difference_check}: {cryptocurrency} -> {user}")
 
                             if (
-                                percentage_of_profit >= 10.0 and
                                 float(asset_available_value_brl) >=
-                                float(asset["base_balance"]) + (float(asset["fixed_profit_brl"]) + 0.3)
+                                float(asset["base_balance"]) +
+                                (float(asset["fixed_profit_brl"]) + 0.3)
                             ):
                                 timestamp = datetime.datetime.now(
                                     pytz.timezone("America/Sao_Paulo")
@@ -95,7 +87,7 @@ class MarketConditionsEvaluator:
                                         "market_symbol": f"{cryptocurrency}brl",
                                         "side": "SELL",
                                         "type": "INSTANT",
-                                        "amount": str(asset_available_value_brl)
+                                        "amount": str(difference_check)
                                     }
 
                                     order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
@@ -120,35 +112,6 @@ class MarketConditionsEvaluator:
                                         "description": f"At this very moment I made a **sale** of R$**{difference_check:.2f}** worth of {asset['name']}!!"
                                     }
                                 )
-                            elif float(asset_available_value_brl) < 1.0 and cryptocurrency in self.beta_feature_cryptos:
-                                coingecko: object = Coingecko(
-                                    coingecko_api_key=COINGECKO_API_KEY
-                                )
-
-                                crypto_history_df = coingecko.get_crypto_history(
-                                    crypto=cryptocurrency, days=365
-                                )
-
-                                predictor = PriceIndicator(crypto_history_df)
-
-                                percent_difference, status, double_percent_difference, double_status, prediction_difference, prediction_status = (
-                                    predictor.run()
-                                )
-
-                                if status == "below" and double_status == "below" and prediction_status == "below":
-                                    if percent_difference <= -5.0 and double_percent_difference <= -5.0 and prediction_difference <= -5.0:
-                                        order = {
-                                            "market_symbol": f"{cryptocurrency}brl",
-                                            "side": "BUY",
-                                            "type": "INSTANT",
-                                            "amount": str(asset["base_balance"])
-                                        }
-
-                                        order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
-
-                                        log.info(f"[{timestamp}] ORDER RESPONSE: {order_response}")
-
-                                        await asyncio.sleep(1)
 
 
 async def main():

@@ -4,7 +4,7 @@ from typing import Union
 import json
 import firebase_admin
 from firebase_admin import credentials, db, initialize_app
-from app.infra import log, FIREBASE_URL, FIREBASE_API_KEY
+from infra import log, FIREBASE_URL, FIREBASE_API_KEY
 
 
 class Firebase:
@@ -26,7 +26,7 @@ class Firebase:
             else:
                 self.firebase_launcher(
                     credentials.Certificate(
-                        r"app/infra/uuidgensen-firebase-adminsdk-odnzh-1be5bd0dcb.json"
+                        r"infra/uuidgensen-firebase-adminsdk-odnzh-1be5bd0dcb.json"
                     )
                 )
 

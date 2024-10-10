@@ -3,9 +3,8 @@
 import requests
 from requests.models import Response
 import pandas as pd
-import os
 
-from app.infra import log, COINGECKO_API_KEY
+from infra import log, COINGECKO_API_KEY
 
 
 class Coingecko:
@@ -119,9 +118,7 @@ class Coingecko:
             
             df = df[['timestamp', 'datetime', 'price']]
 
-            output_path = "/".join([os.getcwd(), f"{crypto}.csv"])
-
-            df.to_csv(output_path, index=False)
+            df.to_csv(f"{crypto}.csv", index=False)
             
             return df
         else:
@@ -139,7 +136,7 @@ if __name__ == "__main__":
 
     print(
         coingecko.get_crypto_history(
-            crypto="bitcoin", days=365
+            crypto="near", days=365
         )
     )
 
