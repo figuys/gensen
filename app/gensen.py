@@ -139,7 +139,7 @@ class MarketConditionsEvaluator:
                                 if status == "below" and double_status == "below" and prediction_status == "below":
                                     if percent_difference <= -5.0 and double_percent_difference <= -5.0 and prediction_difference <= -5.0:
                                         order = {
-                                            "market_symbol": f"brl{cryptocurrency}",
+                                            "market_symbol": f"{cryptocurrency}brl",
                                             "side": "BUY",
                                             "type": "INSTANT",
                                             "amount": str(asset["base_balance"])
