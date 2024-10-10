@@ -92,7 +92,7 @@ class MarketConditionsEvaluator:
 
                                 if ENVIRONMENT == "SERVER":
                                     order = {
-                                        "market_symbol": f"brl{cryptocurrency}",
+                                        "market_symbol": f"{cryptocurrency}",  # brl
                                         "side": "SELL",
                                         "type": "INSTANT",
                                         "amount": str(asset_available_value_brl)
