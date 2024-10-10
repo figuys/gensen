@@ -92,10 +92,10 @@ class MarketConditionsEvaluator:
 
                                 if ENVIRONMENT == "SERVER":
                                     order = {
-                                        "market_symbol": f"brl{cryptocurrency}".upper(),
+                                        "market_symbol": f"{cryptocurrency}brl",
                                         "side": "SELL",
                                         "type": "INSTANT",
-                                        "amount": str(asset_available_value_brl)
+                                        "amount": str(float(asset_available_value_brl - 5.0))
                                     }
 
                                     order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
@@ -121,7 +121,7 @@ class MarketConditionsEvaluator:
                                         "description": f"At this very moment I made a **sale** of R$**{asset_available_value_brl:.2f}** worth of {asset['name']}!!"
                                     }
                                 )
-                            elif float(asset_available_value_brl) < 1.0 and cryptocurrency in self.beta_feature_cryptos:
+                            elif float(asset_available_value_brl) < 10.0 and cryptocurrency in self.beta_feature_cryptos:
                                 coingecko: object = Coingecko(
                                     coingecko_api_key=COINGECKO_API_KEY
                                 )
