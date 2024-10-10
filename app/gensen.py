@@ -118,7 +118,7 @@ class MarketConditionsEvaluator:
                                 connection.child(f"users/{user}/messages/gensen/{name_timestamp}").set(
                                     {
                                         "title": f'Short-term profit of {cryptocurrency.upper()} (+**{difference_check:.2f}**)!',
-                                        "description": f"At this very moment I made a **sale** of R$**{difference_check:.2f}** worth of {asset['name']}!!"
+                                        "description": f"At this very moment I made a **sale** of R$**{asset_available_value_brl:.2f}** worth of {asset['name']}!!"
                                     }
                                 )
                             elif float(asset_available_value_brl) < 1.0 and cryptocurrency in self.beta_feature_cryptos:
