@@ -139,12 +139,12 @@ class MarketConditionsEvaluator:
                                 if status == "below" and double_status == "below" and prediction_status == "below":
                                     if percent_difference <= -5.0 and double_percent_difference <= -5.0 and prediction_difference <= -5.0:
                                         order = {
-                                            "market_symbol": f"{cryptocurrency}brl",
+                                            "market_symbol": f"brl{cryptocurrency}",
                                             "side": "BUY",
                                             "type": "INSTANT",
                                             "amount": str(asset["base_balance"])
                                         }
-                                        
+
                                         order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
 
                                         log.info(f"[{timestamp}] BUY ORDER: {order}")
