@@ -95,7 +95,7 @@ class MarketConditionsEvaluator:
                                         "market_symbol": f"{cryptocurrency}brl",
                                         "side": "SELL",
                                         "type": "INSTANT",
-                                        "amount": str(float(asset_available_value_brl - 5.0))
+                                        "amount": str(float(asset_available_value_brl - 5))
                                     }
 
                                     order_response = foxbit.request("POST", "/rest/v3/orders", None, body=order)
@@ -114,11 +114,11 @@ class MarketConditionsEvaluator:
                                         pytz.timezone("America/Sao_Paulo")
                                 ).strftime("%Y%m%d%H%M%S")
                                 )
-
+                                
                                 connection.child(f"users/{user}/messages/gensen/{name_timestamp}").set(
                                     {
                                         "title": f'Short-term profit of {cryptocurrency.upper()} (+**{difference_check:.2f}**)!',
-                                        "description": f"At this very moment I made a **sale** of R$**{asset_available_value_brl:.2f}** worth of {asset['name']}!!"
+                                        "description": f"At this very moment I made a **sale** of R$**{float(asset_available_value_brl - 5):.2f}** worth of {asset['name']}!!"
                                     }
                                 )
                             elif float(asset_available_value_brl) < 10.0 and cryptocurrency in self.beta_feature_cryptos:
